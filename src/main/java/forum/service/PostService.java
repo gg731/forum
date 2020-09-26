@@ -1,5 +1,6 @@
 package forum.service;
 
+import forum.data.PostRepository;
 import forum.model.Post;
 import org.springframework.stereotype.Service;
 
@@ -9,17 +10,19 @@ import java.util.List;
 @Service
 public class PostService {
 
-    private final List<Post> posts = new ArrayList<>();
+    private final PostRepository posts;
 
-    public PostService() {
-        posts.add(Post.of("Post #1"));
+    public PostService(PostRepository posts) {
+        this.posts = posts;
     }
 
     public List<Post> getAll() {
-        return posts;
+        List<Post> postList = new ArrayList<>();
+        posts.findAll().forEach(postList::add);
+        return postList;
     }
 
     public void add(Post post) {
-        posts.add(post);
+        posts.save(post);
     }
 }

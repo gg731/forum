@@ -33,7 +33,7 @@ public class LoginController {
 
         if (user != null && user.getPassword().equals(pas)) {
             session.setAttribute("user", user);
-            return "index";
+            return "redirect:index";
         } else {
             model.addAttribute("error", "Error Login!");
             return "login";

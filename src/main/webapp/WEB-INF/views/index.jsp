@@ -30,15 +30,15 @@
             <thead>
             <tr>
                 <th scope="col">Post</th>
-                <th scope="col"></th>
+                <th scope="col">Time</th>
             </tr>
             </thead>
             <tbody>
             <c:forEach items="${posts}" var="post">
                 <tr>
-                    <td><c:out value="${post.name}"/></td>
+                    <td><a href="#"><c:out value="${post.name}"/></a></td>
                     <td>
-                        <a href="/edit?id=${post.id}">Edit</a>
+                        <c:out value="${post.created.time}"/>
                     </td>
                 </tr>
             </c:forEach>
