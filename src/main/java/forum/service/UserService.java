@@ -4,9 +4,10 @@ import forum.data.UserRepository;
 import forum.model.User;
 import org.springframework.stereotype.Service;
 
-import java.util.NoSuchElementException;
+import javax.transaction.Transactional;
 
 @Service
+@Transactional
 public class UserService {
     private final UserRepository users;
 
@@ -14,11 +15,12 @@ public class UserService {
         this.users = users;
     }
 
-    public User findByEmail(String email) {
-        return users.findByEmail(email);
+    public User findByUsername(String username) {
+        return users.findByUsername(username);
     }
 
     public void addUser(User user) {
         users.save(user);
     }
+
 }

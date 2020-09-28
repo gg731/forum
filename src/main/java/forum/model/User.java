@@ -1,6 +1,9 @@
 package forum.model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
+
 
 @Entity
 @Table(name = "user")
@@ -8,35 +11,37 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-    private String login;
+    private Long id;
+    private String username;
     private String email;
     private String password;
 
     public User() {
     }
 
-    public User(int id, String login, String email, String password) {
-        this.id = id;
-        this.login = login;
+    public User(String login, String email, String password) {
+        this.username = login;
         this.email = email;
         this.password = password;
     }
 
-    public int getId() {
+    public User(User user) {
+    }
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public String getLogin() {
-        return login;
+    public String getUsername() {
+        return username;
     }
 
-    public void setLogin(String login) {
-        this.login = login;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getEmail() {

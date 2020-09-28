@@ -10,10 +10,10 @@
 <body style="background-color: whitesmoke">
 <form action="/reg" method="post" style="margin-right: auto;margin-left: auto;width: 25%;text-align: center">
     <h2>Forum</h2>
-    <input value="2" hidden name="id">
+    <input value="0" type="number" hidden name="id">
     <div class="form-group">
         <label for="loginReg">Login</label>
-        <input type="text" class="form-control" id="loginReg" name="login" aria-describedby="emailHelp">
+        <input type="text" class="form-control" id="loginReg" name="username" aria-describedby="emailHelp">
     </div>
     <div class="form-group">
         <label for="emailReg">Email address</label>

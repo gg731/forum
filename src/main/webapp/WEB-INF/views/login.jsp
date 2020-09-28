@@ -14,7 +14,7 @@
     <label style="color: green"><c:out value="${successful}"/></label>
     <div class="form-group">
         <label for="exampleInputEmail1">Email address or login</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp">
+        <input type="text" class="form-control" id="exampleInputEmail1" name="username" aria-describedby="emailHelp">
     </div>
     <div class="form-group">
         <label for="exampleInputPassword1">Password</label>
@@ -22,9 +22,9 @@
     </div>
     <button type="submit" class="btn btn-primary">Login</button>
     <p/>
-    <a href="/reg">Registration</a>
+    <a href="<c:url value="/reg"/> ">Registration</a>
 </form>
-
+<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 </body>
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"

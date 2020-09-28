@@ -6,22 +6,29 @@
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
     <title>Forum</title>
+
+    <script>
+        function create() {
+            window.location.replace("http://localhost:8080/create")
+        }
+
+        function posts() {
+            window.location.replace("http://localhost:8080/")
+        }
+    </script>
 </head>
 <body style="background-color: whitesmoke">
 <div>
     <nav class="navbar navbar-dark bg-dark">
         <h4 style="color: whitesmoke">Forum</h4>
-        <button type="button" class="btn btn-light" style="margin-right:7% ">Posts</button>
+        <button type="button" class="btn btn-light" style="margin-right:7% " onclick="posts()">Posts</button>
     </nav>
 </div>
 
 <div>
-    <h2>New post</h2>
-    <form action="/create" method="post">
-        <div class="form-group">
-            <label for="id">id</label>
-            <input type="number" class="form-control" id="id" name="id">
-        </div>
+    <form action="<c:url value="/create" />" method="post" style="width: 30%; margin-left: 5%">
+        <h2>New post</h2>
+        <input type="number" hidden class="form-control" id="id" name="id" value="0">
         <div class="form-group">
             <label for="nameInput">Name</label>
             <input type="text" class="form-control" id="nameInput" name="name">
@@ -30,11 +37,7 @@
             <label for="descInput">Description</label>
             <input type="text" class="form-control" id="descInput" name="desc">
         </div>
-        <div class="form-group">
-            <label for="dataInput">Description</label>
-            <input type="date" class="form-control" id="dataInput" name="data">
-        </div>
-        <button type="button" class="btn btn-success" style="float: right">Create</button>
+        <button type="submit" class="btn btn-success" style="float: right">Create</button>
     </form>
 </div>
 

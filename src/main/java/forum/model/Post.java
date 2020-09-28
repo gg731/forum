@@ -2,6 +2,7 @@ package forum.model;
 
 import javax.persistence.*;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.Objects;
 
 @Entity
@@ -13,7 +14,7 @@ public class Post {
     private int id;
     private String name;
     private String description;
-    private Calendar created;
+    private Calendar created = Calendar.getInstance();
 
     public static Post of(String name) {
         Post post = new Post();
@@ -51,6 +52,10 @@ public class Post {
 
     public void setCreated(Calendar created) {
         this.created = created;
+    }
+
+    public void setNow() {
+        this.created.setTime(new Date(System.currentTimeMillis()));
     }
 
     @Override
