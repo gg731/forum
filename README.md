@@ -4,16 +4,16 @@
 [![GitHub issues](https://img.shields.io/github/issues/gg731/forum)](https://github.com/gg731/forum/issues)
 
 
-## About
 Веб приложение, созданное в учебных целях.
-####Функционал:
+
+Функционал:
 - добавление постов
 - редактирование постов
 - просмотр страницы с созданными постами
 - регистрация в приложение
 - аутентификация в приложении созданная с помощью Spring Security
 
-####Технологии используемые в проекте:
+Технологии используемые в проекте:
 - Spring Boot
 - Spring Security
 - Spring Data
@@ -33,6 +33,5 @@
 
 
 
-
-### Start
+Start
  > mvn spring-boot:run
