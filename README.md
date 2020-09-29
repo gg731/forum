@@ -29,7 +29,7 @@
 ![Image alt](https://github.com/gg731/forum/blob/master/screenshots/reg.png)
 
 Просмотр постов:
-![Image alt](https://github.com/gg731/forum/blob/master/screenshots/postslogin.png)
+![Image alt](https://github.com/gg731/forum/blob/master/screenshots/posts.png)
 
 Создание поста:
 ![Image alt](https://github.com/gg731/forum/blob/master/screenshots/new_post.png)
