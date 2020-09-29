@@ -30,7 +30,8 @@
             <thead>
             <tr>
                 <th scope="col">Post</th>
-                <th scope="col">Time</th>
+                <th scope="col">Desc</th>
+                <th scope="col" style="text-align: right">Time</th>
             </tr>
             </thead>
             <tbody>
@@ -38,6 +39,9 @@
                 <tr>
                     <td><a href="#"><c:out value="${post.name}"/></a></td>
                     <td>
+                        <c:out value="${post.desc}"/>
+                    </td>
+                    <td style="text-align: right">
                         <c:out value="${post.created.time}"/>
                     </td>
                 </tr>
