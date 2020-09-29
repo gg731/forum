@@ -31,6 +31,7 @@ public class CustomUserDetailsService implements UserDetailsService {
             throw new UsernameNotFoundException("No user present with username: " + username);
         } else {
             List<String> userRoles = userRolesRepository.findRoleByUserName(username);
+            CustomUserDetails cs = new CustomUserDetails(user, userRoles);
             return new CustomUserDetails(user, userRoles);
         }
     }

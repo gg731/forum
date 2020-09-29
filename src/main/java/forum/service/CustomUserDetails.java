@@ -45,4 +45,43 @@ public class CustomUserDetails extends User implements UserDetails {
         return true;
     }
 
+    @Override
+    public String getPassword() {
+        return this.user.getPassword();
+    }
+
+    @Override
+    public void setPassword(String password) {
+        this.user.setPassword(password);
+    }
+
+    @Override
+    public Long getId() {
+        return this.getId();
+    }
+
+    @Override
+    public void setId(Long id) {
+        this.user.setId(id);
+    }
+
+    @Override
+    public String getUsername() {
+        return this.user.getUsername();
+    }
+
+    @Override
+    public void setUsername(String username) {
+        this.user.setUsername(username);
+    }
+
+    @Override
+    public String getEmail() {
+        return this.user.getEmail();
+    }
+
+    @Override
+    public void setEmail(String email) {
+        this.user.setEmail(email);
+    }
 }
