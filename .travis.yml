@@ -3,3 +3,8 @@ language: java
 sudo: false
 
 jdk: openjdk14
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
+
+env: CODECOV_TOKEN="7c0cfc3d-b778-4066-aede-01da1a63d827"
