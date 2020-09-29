@@ -23,13 +23,16 @@
 - Непрерывная интеграция Travis, тесты Codecov
 
 Страница аутентификации:
-![alt text](screenshot/login.png)
+![Image alt](https://github.com/gg731/forum/blob/master/screenshots/login.png)
+
 Страница регистрации:
-![alt text](screenshot/reg.png)
+![Image alt](https://github.com/gg731/forum/blob/master/screenshots/reg.png)
+
 Просмотр постов:
-![alt text](screenshot/posts.png)
+![Image alt](https://github.com/gg731/forum/blob/master/screenshots/postslogin.png)
+
 Создание поста:
-![alt text](screenshot/new_post.png)
+![Image alt](https://github.com/gg731/forum/blob/master/screenshots/new_post.png)
 
 
 
