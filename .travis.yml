@@ -2,7 +2,8 @@ language: java
 
 sudo: false
 
-jdk: openjdk13
+jdk:
+  - openjdk11
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
