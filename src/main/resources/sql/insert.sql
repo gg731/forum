@@ -1,2 +1,2 @@
-INSERT INTO `forum`.`posts` (`name`) VALUES ('О чем этот форум?');
-INSERT INTO `forum`.`posts` (`name`) VALUES ('Правила форума.');
+INSERT INTO posts(`name`) VALUES ('О чем этот форум?');
+INSERT INTO posts(`name`) VALUES ('Правила форума.');
