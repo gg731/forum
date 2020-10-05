@@ -1,11 +1,7 @@
 package forum.control;
 
-import forum.data.UserRoleRepository;
-import forum.model.Post;
 import forum.service.UserService;
-import forum.model.User;
 import org.junit.jupiter.api.Test;
-import org.mockito.ArgumentCaptor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -13,14 +9,9 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 
-import static org.hamcrest.Matchers.stringContainsInOrder;
-import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
-import static org.junit.Assert.assertThat;
-import static org.hamcrest.Matchers.is;
 
 @SpringBootTest
 @AutoConfigureMockMvc
@@ -59,10 +50,9 @@ class LoginControllerTest {
                 .andExpect(view().name("reg"));
     }
 
-
 //    @Test
 //    @WithMockUser
-//    void postReg() throws Exception {
+//    void regPost() throws Exception {
 //        this.mock.perform(post("/reg")
 //                .param("username", "qwe")
 //                .param("password", "123"))

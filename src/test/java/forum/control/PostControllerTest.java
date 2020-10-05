@@ -60,6 +60,4 @@ class PostControllerTest {
         verify(posts).add(argument.capture());
         assertThat(argument.getValue().getName(), is("Name"));
     }
-
-
 }

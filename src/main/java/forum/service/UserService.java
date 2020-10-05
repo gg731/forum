@@ -19,8 +19,8 @@ public class UserService {
         return users.findByUsername(username);
     }
 
-    public void addUser(User user) {
-        users.save(user);
+    public User addUser(User user) {
+        return users.save(user);
     }
 
 }
