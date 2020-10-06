@@ -17,7 +17,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @SpringBootTest(classes = Main.class)
 @AutoConfigureMockMvc
-@TestPropertySource(locations = "classpath:application.properties")
 class LoginControllerTest {
 
     @Autowired
