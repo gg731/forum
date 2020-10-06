@@ -3,10 +3,17 @@ language: java
 sudo: false
 
 jdk:
-   openjdk11
+  openjdk11
 
 services:
   - mysql
+
+test:
+  adapter: mysql
+  database: forum
+  username: root
+  password: root
+  encoding: utf8
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
