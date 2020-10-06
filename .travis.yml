@@ -1,6 +1,6 @@
 language: java
 
-sudo: false
+sudo: true
 
 jdk:
   openjdk11
@@ -8,10 +8,15 @@ jdk:
 services:
   - mysql
 
+addons:
+  apt:
+    sources:
+      - mysql-5.7-trusty
+    packages:
+      - mysql-server
+      - mysql-client
+
 after_success:
   - bash <(curl -s https://codecov.io/bash)
-
-before_install:
-  - mysql -u root -p root < travis.sql
 
 env: CODECOV_TOKEN="7c0cfc3d-b778-4066-aede-01da1a63d827"
