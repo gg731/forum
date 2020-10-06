@@ -6,7 +6,7 @@ jdk:
   openjdk11
 
 services:
-  - mysql
+   mysql
 
 addons:
   apt:
