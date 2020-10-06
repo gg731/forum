@@ -1,5 +1,6 @@
 package forum.control;
 
+import forum.Main;
 import forum.model.Post;
 import forum.service.PostService;
 import org.junit.jupiter.api.Test;
@@ -9,6 +10,7 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.security.test.context.support.WithMockUser;
+import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.web.servlet.MockMvc;
 
 import static org.mockito.Mockito.*;
@@ -20,9 +22,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 
-
-@SpringBootTest
+@SpringBootTest(classes = Main.class)
 @AutoConfigureMockMvc
+@TestPropertySource(locations = "classpath:application.properties")
 class PostControllerTest {
 
     @Autowired
