@@ -8,14 +8,10 @@ jdk:
 services:
   - mysql
 
-test:
-  adapter: mysql
-  database: forum
-  username: root
-  password: root
-  encoding: utf8
-
 after_success:
   - bash <(curl -s https://codecov.io/bash)
+
+before_install:
+  - mysql -u root --password=root < test/travis.sql
 
 env: CODECOV_TOKEN="7c0cfc3d-b778-4066-aede-01da1a63d827"
