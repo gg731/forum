@@ -6,7 +6,7 @@ jdk:
   openjdk11
 
 services:
-   mysql
+  mysql
 
 addons:
   apt:
@@ -15,6 +15,10 @@ addons:
     packages:
       - mysql-server
       - mysql-client
+
+before_script:
+  - mysql -uroot -proot
+
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
