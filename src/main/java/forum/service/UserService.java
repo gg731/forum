@@ -5,6 +5,8 @@ import forum.model.User;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 @Transactional
@@ -21,6 +23,12 @@ public class UserService {
 
     public User addUser(User user) {
         return users.save(user);
+    }
+
+    public List<User> findAll() {
+        List<User> allUser = new ArrayList<>();
+        users.findAll().forEach(allUser::add);
+        return allUser;
     }
 
 }

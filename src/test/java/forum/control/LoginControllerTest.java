@@ -1,8 +1,10 @@
 package forum.control;
 
 import forum.Main;
+import forum.model.User;
 import forum.service.UserService;
 import org.junit.jupiter.api.Test;
+import org.mockito.ArgumentCaptor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -11,12 +13,17 @@ import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.web.servlet.MockMvc;
 
+import static org.hamcrest.Matchers.is;
+import static org.junit.Assert.assertThat;
+import static org.mockito.Mockito.verify;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @SpringBootTest(classes = Main.class)
 @AutoConfigureMockMvc
+@TestPropertySource(locations = "/application-test.properties")
 class LoginControllerTest {
 
     @Autowired
@@ -62,8 +69,8 @@ class LoginControllerTest {
 //                .andExpect(status().isOk());
 //        ArgumentCaptor<User> argument = ArgumentCaptor.forClass(User.class);
 //        verify(users).addUser(argument.capture());
-//        users.addUser(new User("qwe", "123", "123@123.e"));
+//        users.addUser(new User("ppp", "ppp", "123@123.e"));
 //
-//        assertThat(argument.getValue().getUsername(), is("qwe"));
+//        assertThat(argument.getValue().getUsername(), is("ppp"));
 //    }
 }

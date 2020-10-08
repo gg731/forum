@@ -67,8 +67,8 @@ public class LoginController {
                           Model model) {
         user.setPassword(
                 new BCryptPasswordEncoder().encode(user.getPassword()));
-        users.addUser(user);
 
+        users.addUser(user);
         userRole.save(
                 new UserRole(users.findByUsername(user.getUsername()).getId(), "ROLE_USER"));
 

@@ -24,6 +24,7 @@ import static org.junit.Assert.assertThat;
 
 @SpringBootTest(classes = Main.class)
 @AutoConfigureMockMvc
+@TestPropertySource(locations = "/application-test.properties")
 class PostControllerTest {
 
     @Autowired
