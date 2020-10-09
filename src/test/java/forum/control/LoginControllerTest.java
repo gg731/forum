@@ -59,18 +59,4 @@ class LoginControllerTest {
                 .andExpect(view().name("reg"));
     }
 
-//    @Test
-//    @WithMockUser
-//    void regPost() throws Exception {
-//        this.mock.perform(post("/reg")
-//                .param("username", "qwe")
-//                .param("password", "123"))
-//                .andDo(print())
-//                .andExpect(status().isOk());
-//        ArgumentCaptor<User> argument = ArgumentCaptor.forClass(User.class);
-//        verify(users).addUser(argument.capture());
-//        users.addUser(new User("ppp", "ppp", "123@123.e"));
-//
-//        assertThat(argument.getValue().getUsername(), is("ppp"));
-//    }
 }
