@@ -16,6 +16,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
@@ -59,4 +60,20 @@ class LoginControllerTest {
                 .andExpect(view().name("reg"));
     }
 
+    @Test
+    @WithMockUser
+    void postReg() throws Exception {
+        User user = new User();
+        user.setId(1L);
+        when(users.findByUsername("qwe")).thenReturn(user);
+        this.mock.perform(post("/reg")
+                .param("username", "qwe")
+                .param("password", "123"))
+                .andDo(print())
+                .andExpect(status().isOk());
+        ArgumentCaptor<User> argument = ArgumentCaptor.forClass(User.class);
+        verify(users).addUser(argument.capture());
+        users.addUser(new User("qwe", "123", "123@123.e"));
+        assertThat(argument.getValue().getUsername(), is("qwe"));
+    }
 }
