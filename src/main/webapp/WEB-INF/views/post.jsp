@@ -8,12 +8,8 @@
     <title>Forum</title>
 
     <script>
-        function create() {
-            window.location.replace("http://localhost:8080/create")
-        }
-
         function posts() {
-            window.location.replace("http://localhost:8080/")
+            window.location.replace("/")
         }
     </script>
 </head>
@@ -31,11 +27,11 @@
         <input type="number" hidden class="form-control" id="id" name="id" value="0">
         <div class="form-group">
             <label for="nameInput">Name</label>
-            <input type="text" class="form-control" id="nameInput" name="name">
+            <input type="text" required class="form-control" id="nameInput" name="name">
         </div>
         <div class="form-group">
             <label for="descInput">Description</label>
-            <input type="text" class="form-control" id="descInput" name="desc">
+            <input type="text" required class="form-control" id="descInput" name="desc">
         </div>
         <button type="submit" class="btn btn-success" style="float: right">Create</button>
     </form>

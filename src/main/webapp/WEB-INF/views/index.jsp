@@ -6,12 +6,14 @@
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
     <script>
+
+
         function create() {
-            window.location.replace("http://localhost:8080/create")
+            window.location.replace("create")
         }
 
         function posts() {
-            window.location.replace("http://localhost:8080/")
+            window.location.replace("/")
         }
     </script>
     <title>Forum</title>
