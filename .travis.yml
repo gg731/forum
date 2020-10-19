@@ -1,14 +1,14 @@
 language: java
-
 sudo: true
-
-jdk:
-  openjdk11
-
+jdk: openjdk11
 services:
   - mysql
-
 after_success:
   - bash <(curl -s https://codecov.io/bash)
-
 env: CODECOV_TOKEN="7c0cfc3d-b778-4066-aede-01da1a63d827"
+deploy:
+  provider: heroku
+  edge: true
+  app: blooming-mesa-27827
+  api_key:
+    secure: Xqc/UixrjCPwLE9K/Tahn2PCRjOAuCIrKpInwSNKp0PGMAMIzJn+aDtw5NjyFh8BcJyR9mdB9E3pbMUvskZ5rWmv+q7e037yBLFV4VmTSlar+/IKCZfs3PbePkGgUeyZGGw52iry2mxYbQS3QZ/gGJyxkP/MaJjzJwRWqZdV5Ad7PylOA05WSFw2iqdRO9iJzlOS4llGUZxY6N4d3tr5bpay/TXkW7Pae0mld6yHuupr5L+mh9nyxbR9UR303tdAbrL0DLb8Bj0hTJQ1rxVJofDgj3EGVYfzxl6INnjWMtWDUobGOIeEz2VHPOVufZLtxmwrR93Zx1VtIGT511FeIK6ega94WYdMwpr8QUQ0kaqMaHXHf/7jT6io7KJaz1PbFq3uhLGbKSDcvNz6aXLV3HVsw/hLAGlM+8eap8JSY6a4Xfg83WGds0ApHTBmfULL4tPSzxtyGmRAYgNY+ZrkCxswuRmpaeEKF59l258Igkv0Ld8hsZAUan3Bj9oQTNmrFYGDZ3u9Ymk6ln5YH/bEKPdhrKEG5i/ClvqHIyODopFhAboAkSWKJpTB7JrM+Q5VvKA/6z81VgR6a6HmmQfYVP07Vtdr98VOYIl+uBWqqqrq70k77S/alQ14KBfVrH7bzeapusUK8SCHPzbD6A3wXHsOu3woeCkgXf7Kg5p2bwg=
